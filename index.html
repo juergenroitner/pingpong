@@ -48,7 +48,23 @@
                 }
 
 
-            });
+            });//addEventlistener
+            
+            window.addEventListener('devicemotion', function(event){
+  
+  var xacceleration = Math.round(event.acceleration.x*10)/10;
+    var neigung = Math.round(event.accelerationIncludingGravity.x*10)/10;   
+      
+       padlx = padlx - xneigung;         
+                
+  document.getElementById("accel-x").innerHTML =  xacceleration;
+  
+
+  document.getElementById("neigung-x").innerHTML =  Math.round(event.accelerationIncludingGravity.x*10)/10;
+  
+  
+});
+            
             timer = setInterval(draw, 5);
             draw();
 
